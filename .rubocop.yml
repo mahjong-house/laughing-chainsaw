@@ -1,0 +1,159 @@
+require:
+  - test_prof/rubocop
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - app/mailers/application_mailer.rb
+    - bin/*
+    - config.ru
+    - config/*
+    - config/environments/*
+    - db/**/*
+    - Gemfile
+    - Guardfile
+    - Rakefile
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional
+Naming/PredicateName:
+  Exclude:
+    - app/serializers/**/*_serializer.rb
+Naming/UncommunicativeMethodParamName:
+  AllowedNames:
+    - '_'
+  MinNameLength: 2
+
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - lib/tasks/**/*.rake
+  ExcludedMethods:
+    - message
+Metrics/ClassLength:
+  Max: 120
+Metrics/LineLength:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 30
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    associations:
+      - has_many
+      - has_one
+    validations:
+      - validates
+    callbacks:
+      - before_create
+      - before_validation
+      - after_create
+    scopes:
+      - scope
+  ExpectedOrder:
+      - module_inclusion
+      - constants
+      - associations
+      - validations
+      - callbacks
+      - scopes
+      - public_class_methods
+      - initializer
+      - instance_methods
+      - protected_methods
+      - private_methods
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Layout/EmptyLinesAroundExceptionHandlingKeywords:
+  Enabled: false
+Layout/IndentHash:
+  EnforcedStyle: consistent
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Layout/SpaceInLambdaLiteral:
+  EnforcedStyle: require_space
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+Style/Documentation:
+  Enabled: false
+Style/FormatString:
+  EnforcedStyle: percent
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/GlobalVars:
+  AllowedVariables:
+    - $flipper
+    - $redis
+Style/ImplicitRuntimeError:
+  Enabled: true
+Style/Lambda:
+  EnforcedStyle: literal
+Style/MultilineMethodSignature:
+  Enabled: true
+Style/NumericLiterals:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '()'
+    '%I': '()'
+    '%r': '{}'
+    '%w': '()'
+    '%W': '()'
+Style/RaiseArgs:
+  EnforcedStyle: compact
+Style/RegexpLiteral:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+Style/SymbolArray:
+  Enabled: true
+Style/TernaryParentheses:
+  EnforcedStyle: require_parentheses_when_complex
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Rails:
+  Enabled: true
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
+
+RSpec/AggregateFailures:
+  Enabled: true
+  Include:
+    - spec/**/*.rb
+RSpec/DescribeClass:
+  Exclude:
+    - spec/tasks/**/*
+RSpec/ExampleLength:
+  Max: 30
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/MultipleDescribes:
+  Exclude:
+    - spec/tasks/**/*
+RSpec/NestedGroups:
+  Max: 4
+RSpec/PredicateMatcher:
+  Enabled: false

@@ -23,10 +23,17 @@ group :development do
   gem 'bullet'
   gem 'graphql-rails_logger'
   gem 'graphql-schema_comparator', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
 
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'test-prof'
 end
 
 
