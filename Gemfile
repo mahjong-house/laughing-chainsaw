@@ -6,6 +6,9 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 gem 'pg', '~> 1.0.0'
 gem 'puma'
+
+gem 'graphql'
+gem 'graphql-batch'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 
@@ -14,6 +17,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'graphql-rails_logger'
+  gem 'graphql-schema_comparator', require: false
+
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
