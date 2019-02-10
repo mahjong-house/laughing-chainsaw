@@ -10,13 +10,17 @@ gem 'puma'
 gem 'graphql'
 gem 'graphql-batch'
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'baby_squeel'
+gem 'strong_migrations'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :development do
+  gem 'awesome_print'
+  gem 'bullet'
   gem 'graphql-rails_logger'
   gem 'graphql-schema_comparator', require: false
 
