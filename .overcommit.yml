@@ -1,0 +1,31 @@
+CommitMsg:
+  ALL:
+    quiet: true
+  TextWidth:
+    enabled: true
+    max_subject_width: 72
+    max_body_width: 72
+PreCommit:
+  AuthorName:
+    enabled: false
+  HardTabs:
+    enabled: true
+  LineEndings:
+    enabled: true
+    exclude: public/images/**/*
+    eol: "\n"
+  RuboCop:
+    enabled: true
+  TrailingWhitespace:
+    enabled: true
+PrePush:
+  RSpec:
+    enabled: true
+  RakeTarget:
+    enabled: true
+    targets: ["app:graphql:check_schema"]
+PostCheckout:
+  CustomHook:
+    enabled: true
+    description: "Stop Spring"
+    command: ["bin/spring", "stop"]
